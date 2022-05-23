@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>                  
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>homepage</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="main-container">
+        <header id="header">
+            <div class="header_middle">
+                <img src="icon/logo.png" alt="logo">
+
+            </div>
+
+            <div class="header_right">
+              <div class="header_option">
+                   <span class="material-symbols-outlined">
+                      add_a_photo
+                    </span>
+        
+                    <span class="material-symbols-outlined">
+                         home
+                    </span>
+
+                    <span class="material-symbols-outlined">
+                        stars
+                    </span>
+
+                    <span class="material-symbols-outlined">
+                        group_add
+                    </span>
+
+                    <span class="material-symbols-outlined">
+                        notifications
+                    </span>
+
+                    <span class="material-symbols-outlined">
+                        expand_more
+                    </span>
+
+              </div>
+
+                     <span class="material-symbols-outlined">
+                          search
+                    </span>
+              <input type="text" placeholder="Search"/>
+            </div>
+        </header>
+    </div>
+   
+     <div class="middle">
+         <div class="left_container">
+            <div class="profile-pic-div">
+                <img src="icon/images.png" id="photo">
+                <input type="file" id="file">
+                <label for="file" id="uploadBtn">Choose Photo</label>
+            </div>
+
+        <!--side left-->
+          <div class="sidebarrow">
+            <span class="material-symbols-outlined">
+                account_circle_full
+                </span>
+           <h3>Profile</h3>
+        </div>
+        
+        <div class="sidebarrow">
+            <span class="material-symbols-outlined">
+                group
+                </span>
+            <h3>Friends</h3>
+        </div>
+        
+
+        <div class="sidebarrow">
+            <span class="material-symbols-outlined">
+                image
+                </span>
+            <h3>Photos of me</h3>
+
+        </div>
+
+        <div class="sidebarrow">
+            <span class="material-symbols-outlined">
+                calendar_month
+                </span>
+            <h3>Zodiac Calender</h3>
+        </div>
+
+        <div class="sidebarrow">
+            <span class="material-symbols-outlined" >
+                magic_button
+                </span>
+            <h3>Astrology</h3> 
+         </div>
+         </div>
+    
+    
+    
+
+        <!--feed-->
+        <div class="container">
+            <div class="top_bar">
+                <div class="profile_img">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsZSUyMHBpY3R1cmV8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                        alt="profilepic" href="#">
+                    <img src="https://www.istockphoto.com/fr/vectoriel/roue-dastrologie-horoscope-cercles-avec-des-signes-du-zodiaque-avec-des-gm1283887928-381187903" href="#" class="zodiac">
+                    <span class="username">Coding BD</span>
+                </div>
+                <i class="fa fa-ellipsis-h"></i>
+            </div>
+            <div class="main_img">
+                <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHByb2ZpbGUlMjBwaWN0dXJlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                    alt="">
+            </div>
+            <div class="footer">
+                 <div class="reaction-wrapper">
+                    <div class="heart-like-button"></div>
+                    <img src="img/comment.PNG" class="iconss" alt="">
+                </div>
+                <div class="likeCount">
+                    <p>10,890 Likes</p>
+                </div>
+                <div class="caption">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis excepturi impedit facere, ad
+                        adipisci, cum veritatis libero ipsam, ex quo quis neque debitis tenetur consequatur?</p>
+                        <p class="post-time">2 minutes ago</p>
+                </div>
+                <div class="comments_box">
+                    <div class="icon">😊</div>
+                    <div class="input_field">
+                        <input type="text" placeholder="Add a Comments..." id="">
+                    </div>
+                    <div class="btn"><button>Post</button></div>
+                </div>
+            </div>
+
+
+        <div class="prediction">
+            <?php
+             include "/prediction/prediction.php "
+            ?>
+        
+        </div>
+
+        </div>
+
+
+
+      
+                    
+
+        <!--side right-->
+
+   
+    </div>
+    
+     <script src="app.js"></script>
+     <!-- JavaScript Bundle with Popper -->
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+    
+</body>
+</html>

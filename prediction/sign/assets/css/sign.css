@@ -1,0 +1,26 @@
+.text_p {
+    font-size: 18px;
+    max-width: 580px;
+    margin: 0 auto;
+    
+}
+.text_h {
+    margin: 0 auto;
+    width: 580px;
+    
+}
+h1 {
+   text-align: center;
+   
+}
+body {
+    background: url("/home_page/assets/img/back_signs.jpg");
+}
+.banner {
+    display: block;
+    max-width: 600px;
+    max-height: fit-content;
+    margin: 0px auto 0px auto;
+    padding: 5px;
+    background-color: aliceblue;
+}

@@ -1,0 +1,179 @@
+body{
+    background:url("mbYNtH.jpg");
+}
+
+*{
+  margin: 0;
+
+}
+
+
+
+
+
+.image{
+  border-radius:60% 60% 60% 60%;  
+  width:100px;
+  height:100px;
+  float: left;
+  margin: 5px 2px;
+  
+  
+}
+
+.Zodiac_images{
+  margin-top: 61px;
+    height: 28px;
+}
+
+.top {
+  display: flex;
+  justify-content: space-evenly;
+  margin: auto;
+   width: 87%;
+   padding: 2px;
+   margin-right: 104px;   /* Horizontal Space */
+   margin-bottom: 13px;
+   height: 12px;
+
+   
+}
+
+.bottom{
+   display: flex;
+   justify-content: space-evenly;
+   margin: auto;
+   width: 90%;
+   padding: 2px;
+   margin-right: 62px;   /* Horizontal Space */
+   margin-bottom: 13px;
+   height: 17px;
+}
+
+.Zodiac{
+  font-size: x-small;
+  color: white;
+  width: 246px;
+  margin-top: 80px;
+  text-align: center;
+
+  
+ 
+}
+
+.description1{
+    display: flex;
+    justify-content: space-evenly;
+    margin: auto;
+     width: 83%;
+     padding: 12px;
+     margin-right: 131px;   /* Horizontal Space */
+     margin-bottom: -22px;
+     height: 108px;
+   
+
+
+}
+.description2{
+  display: flex;
+  justify-content: space-evenly;
+  margin: auto;
+   width: 84%;
+   padding: 12px;
+   margin-right: 105px;   /* Horizontal Space */
+   margin-bottom: -22px;
+   height: 108px;
+}
+
+
+
+
+.carousel-inner {
+
+  margin-left: 400px;
+  margin-right: auto;
+  margin-top: 50px;
+  }
+  .carousel-control-prev {
+      margin-top: -200px;
+  }
+  .carousel-control-next {
+      margin-top: -200px;
+  }
+  .top-header{
+    height: 86px;
+}
+
+
+.logo{
+    text-align: center; 
+    background: none;
+    text-align: center;
+    margin: auto;
+    width: 90%;
+    padding: 10px;
+    font-size: 400%;
+    font-family: 'Raleway', sans-serif;
+}
+
+.red{
+    color: red;
+    background: none;
+
+}
+.sub-write{
+    text-align: center;
+    color: white;
+    margin: auto;
+    width: 90%;
+    padding: 10px;
+    height: 10px;
+    font-family: 'Raleway', sans-serif;
+
+}
+
+.button{
+    margin-left: 1234px;
+    height: 54px;
+  
+  }
+  
+
+.bottom{
+   margin-top: 125px;
+}
+ul {
+  position:absolute;
+  list-style-type: none;
+  margin-bottom: 100px;
+  padding: 0;
+  overflow: hidden;
+  width: 99%;
+  /* background-color: black; */
+}
+
+li {
+  float: right;
+  
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-family: 'Raleway', sans-serif;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+  background-color: #111;
+}
+element.style {
+  margin-bottom: 0;
+}
+
+.button :hover{
+  background-color: #111;
+}
