@@ -26,10 +26,10 @@ pwShowHide.forEach(eyeIcon =>{
 })
 
 // js code to appear signup and login form
-signUp.addEventListener("click", ( )=>{
-  container.classList.add("active");
-});
-login.addEventListener("click", ( )=>{
-  container.classList.remove("active");
-});
+// signUp.addEventListener("click", ( )=>{
+//   container.classList.add("active");
+// });
+// login.addEventListener("click", ( )=>{
+//   container.classList.remove("active");
+// });
 
