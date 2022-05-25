@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body{
+    background-image: url("papers.co-nl96-sky-night-galaxy-star-milkyway-space-dark-26-wallpaper.jpg");
+}
+
+.wrapper .container{
+  
+  background-color: blueviolet;
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+  align-items: center;
+  padding: 20px 30px;
+  border-radius: 15px;
+  border:5px solid gold;
+  margin-left: 250px;
+  width: 1000px;
+  height: 1500px;
+  opacity: 0.7;
+}
+
+.wrapper .container .image{
+  margin: 10px 0;
+  height: 150px;
+  width: 150px;
+  background: violet;
+  padding: 5px;
+  border-radius: 50%;
+}
+.container .image img{
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #fff;
+}
+.container p{
+  text-align: justify;
+  margin-top: 8px;
+  font-size: 16px;
+  font-weight: 400;
+}
+#bt-fr{
+    width:100px;
+    height: 50px;
+    font-size: 15px;
+    border-radius: 12px;
+}
+#bt-photo{
+    width:100px;
+    height: 50px;
+    font-size: 15px;
+    border-radius: 12px;
+}
+#bt-ft{
+    width:100px;
+    height: 50px;
+    font-size: 15px;
+    border-radius: 12px;
+}
+button {
+    transition-duration: 0.4s;
+    margin-right: 70px;
+    margin-left: 70px;
+  }
+.button{
+    display: inline-block;
+    padding: 20px 50px;
+    justify-content: center;
+}
+  
+button:hover {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    cursor: pointer;
+  }
+.image-2{
+    margin: 10px 0;
+    height: 100px;
+    width: 100px;
+    background: violet;
+    padding: 5px;
+    border-radius: 50%;
+    margin-left: -100px;
+    margin-top: 50px;
+  }
+.image-2 img{
+    height: 90px;
+    width: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #fff;
+  }
+.bord{
+    width: 700px;
+    height: 500px;
+    background: #7297e0;
+    display: block;
+    border-radius: 15px;
+    align-items: center;
+}
+@media (max-width:1045px){
+  .wrapper .container{
+    width: calc(50% - 10px);
+    margin-bottom: 20px;
+  }
+}
+@media (max-width:710px){
+  .wrapper .container{
+    width: 100%;
+  }
+}
