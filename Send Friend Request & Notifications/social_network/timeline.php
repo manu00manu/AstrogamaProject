@@ -3,14 +3,14 @@
 
 
 
-$sender_id =  $_REQUEST['sender_id']; 
+$id =  $_REQUEST['id']; 
 
-$sql_friend_request = "SELECT * FROM friend_request where sender_id = '$sender_id'";
+$sql_friend_request = "SELECT * FROM friend_request where id = '$id'";
 $result_register = mysqli_query($conn, $sql_friend_request);  
 
 $row_register = mysqli_fetch_assoc($result_register); 
 
-$name =  $row_register['name'];
+$username =  $row_register['username'];
 $email =  $row_register['email'];
 
 
@@ -19,7 +19,8 @@ $result_profile = mysqli_query($conn, $sql_profile);
 
     $row_profile = mysqli_fetch_assoc($result_profile); 
   $gender_id =   $row_profile['gender'];
-  $dateOfBirth =   $row_profile['dob'];
+  $dateOfBirth =   $row_profile['dateOfBirth'];
+  $horoscope_id = $row_profile['horoscope_id'];
   $profile_pic =   $row_profile['profile_pic']; 
 
 ?>
@@ -44,7 +45,7 @@ gender:
 
 </div>
 <div class="col-6">
-Dob:
+Date Of Birth:
 </div>
 <div class="col-6">
 <?php echo $dateOfBirth; ?>
@@ -52,8 +53,8 @@ Dob:
 </div>
 <div class="col-12 pt-2">
 <?php
-   $sendFrom= $_SESSION["user_id"]; 
-$sql_CheckReq = "SELECT * FROM requests where sendingfrom = '$sendFrom' and sendingto = '$id' and accepted='0'";
+   $sendFrom= $_SESSION["id"]; 
+$sql_CheckReq = "SELECT * FROM friend_requests where sendingfrom = '$sendFrom' and sendingto = '$sender_id' and accepted='0'";
 
 $result_CheckReq = mysqli_query($conn, $sql_CheckReq);   
 if (mysqli_num_rows($result_CheckReq) > 0) {

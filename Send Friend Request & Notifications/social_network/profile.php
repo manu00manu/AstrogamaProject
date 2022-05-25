@@ -3,20 +3,17 @@
 <?php
 
 
-$user_id = $_SESSION['member_id'];
+$user_id = $_SESSION['user_id'];
 
 
-$sql_displayValues = "SELECT * FROM profile where user_id = '$user_id'";
+$sql_displayValues = "SELECT * FROM users where user_id = '$user_id'";
 $result_displayValues = mysqli_query($conn, $sql_displayValues);
 
  $row_displayValues = mysqli_fetch_assoc($result_displayValues);
-$about = $row_displayValues['about'];
-$gender = $row_displayValues['gender'];
-$dob = $row_displayValues['dob'];
-$education1 = $row_displayValues['education1'];
-$education2 = $row_displayValues['education2'];
-$education3 = $row_displayValues['education3'];
-$country = $row_displayValues['country']; 
+$username = $row_displayValues['username'];
+$gender_id = $row_displayValues['gender_id'];
+$dateOfBirth = $row_displayValues['dateOfBirth'];
+$horoscope_id = $row_displayValues['horoscope_id']; 
 $profile_pic = $row_displayValues['profile_pic']; 
 
  
@@ -26,21 +23,22 @@ $success = '';
 
 if(isset($_REQUEST['submit'])){
 
-    $about_fetched = $_REQUEST['about'];
-    $gender_fetched = $_REQUEST['gender'];
-    $dob_fetched = $_REQUEST['dob'];
+    $username_fetched = $_REQUEST['username'];
+    $gender_id_fetched = $_REQUEST['gender_id'];
+    $dateOfBirth_fetched = $_REQUEST['dateOfBirth'];
+    $horoscope_id_fetched = $_REQUEST['horoscope_id'];
     $dateAdded_fetched = date('Y-m-d');
 
   
-    if(!empty($about_fetched) && !empty($gender_fetched) && !empty($dob_fetched)&& !empty($edu1_fetched)&& !empty($edu2_fetched)&& !empty($edu3_fetched)&& !empty($country_fetched)){
+    if(!empty($username_fetched ) && !empty($gender_id_fetched) && !empty($dateOfBirth_fetched) && !empty($horoscope_id_fetched)){
 
 
         
-$sql_check_isavail = "SELECT * FROM profile where user_id = '$user_id'";
+$sql_check_isavail = "SELECT * FROM users where user_id = '$user_id'";
 $result_check_isavail = mysqli_query($conn, $sql_check_isavail);
 
 // var_dump($_FILES['picture']); 
-$fileName = $_FILES['profile_pic']['name'];
+$fileName = $_FILES['profile_pic']['username'];
 $tempLocation = $_FILES['profile_pic']['tmp_name'];
 $newfileName = rand(9999,1000).date('ymdhis').$fileName;  
 move_uploaded_file($tempLocation,'images/'.$newfileName);
@@ -49,24 +47,21 @@ move_uploaded_file($tempLocation,'images/'.$newfileName);
 
 if (mysqli_num_rows($result_check_isavail) == 1) {
     // update query
-    $sql_update = "UPDATE profile SET profile_pic='$newfileName',
-     about='$about_fetched', dob='$dob_fetched', gender='$gender_fetched', education1='$edu1_fetched', education2='$edu2_fetched', education3='$edu3_fetched', country='$country_fetched'
+    $sql_update = "UPDATE users SET profile_pic='$newfileName',
+     username='$username_fetched', dateOfBirth=' $dateOfBirth_fetched', gender_id='$gender_id_fetched'
       WHERE user_id='$user_id'";
 
 if (mysqli_query($conn, $sql_update)) {
   echo "Record updated successfully";
   
-$sql_displayValues = "SELECT * FROM profile where user_id = '$user_id'";
+$sql_displayValues = "SELECT * FROM users where user_id = '$user_id'";
 $result_displayValues = mysqli_query($conn, $sql_displayValues);
 
  $row_displayValues = mysqli_fetch_assoc($result_displayValues);
-$about = $row_displayValues['about'];
-$gender = $row_displayValues['gender'];
-$dob = $row_displayValues['dob'];
-$education1 = $row_displayValues['education1'];
-$education2 = $row_displayValues['education2'];
-$education3 = $row_displayValues['education3'];
-$country = $row_displayValues['country']; 
+$username = $row_displayValues['username'];
+$gender_id = $row_displayValues['gender_id'];
+$dateOfBirth = $row_displayValues['dateOfBirth'];
+$horoscope_id = $row_displayValues['horoscope_id'];
 $profile_pic = $row_displayValues['profile_pic']; 
 
 } else {
@@ -78,23 +73,20 @@ $profile_pic = $row_displayValues['profile_pic'];
 
 
  
-    $sql = "INSERT INTO profile (profile_pic, user_id, about, gender, dob, education1, education2, education3, country, date_added) 
-    VALUES ('$newfileName','$user_id', '$about_fetched', '$gender_fetched', '$dob_fetched', '$edu1_fetched', '$edu2_fetched', '$edu3_fetched', '$country_fetched', '$dateAdded_fetched')"; 
+    $sql = "INSERT INTO users (profile_pic, user_id, username, gender_id, dateOfBirth, horoscope_id, date_added) 
+    VALUES ('$newfileName','$user_id', '$username_fetched', '$gender_id_fetched', '$dateOfBirth_fetched', '$horoscope_id_fetched','$dateAdded_fetched')"; 
               if (mysqli_query($conn, $sql)) {
                   $success  =  "Profile Created";
                   
-$sql_displayValues = "SELECT * FROM profile where user_id = '$user_id'";
+$sql_displayValues = "SELECT * FROM users where user_id = '$user_id'";
 $result_displayValues = mysqli_query($conn, $sql_displayValues);
 
  $row_displayValues = mysqli_fetch_assoc($result_displayValues);
-$about = $row_displayValues['about'];
-$gender = $row_displayValues['gender'];
-$dob = $row_displayValues['dob'];
-$education1 = $row_displayValues['education1'];
-$education2 = $row_displayValues['education2'];
-$education3 = $row_displayValues['education3'];
-$country = $row_displayValues['country']; 
-$profile_pic = $row_displayValues['profile_pic']; 
+ $username = $row_displayValues['username'];
+ $gender_id = $row_displayValues['gender_id'];
+ $dateOfBirth = $row_displayValues['dateOfBirth'];
+ $horoscope_id = $row_displayValues['horoscope_id'];
+ $profile_pic = $row_displayValues['profile_pic']; 
 
               } else {
                   $success  =  "Error: " . $sql . "<br>" . mysqli_error($conn);
@@ -146,41 +138,20 @@ $profile_pic = $row_displayValues['profile_pic'];
 </div>
 
     <div class="form-group">
-        <label for="about">About:</label>
-        <textarea  id="" cols="30" rows="3" class='form-control' name='about'><?php echo (isset($about)) ? "$about" : ""?></textarea>
+        <label for="username">Username:</label>
+        <textarea  id="" cols="30" rows="3" class='form-control' name='username'><?php echo (isset($username)) ? "$username" : ""?></textarea>
     </div>
     <div class="form-group">
         <label for="gender">Select Gender:</label> 
-       <input type="radio" name='gender' value='m' <?php echo (isset($gender) && $gender=='m') ? "checked" : ""?>> Male
-       <input type="radio" name='gender' value='f' <?php echo (isset($gender) && $gender=='f') ? "checked" : ""?>> Female
+       <input type="radio" name='gender' value='m' <?php echo (isset($gender_id) && $gender=='m') ? "checked" : ""?>> Male
+       <input type="radio" name='gender' value='f' <?php echo (isset($gender_id) && $gender=='f') ? "checked" : ""?>> Female
     </div>
     <div class="form-group">
-        <label for="gender">Select DOB:</label> 
-       <input type="date" name='dob' class='form-control' value='<?php echo (isset($dob)) ? "$dob" : ""?>'>
-    </div>
-    <div class="form-group">
-        <label for="gender">Add Education:</label> 
-       <input type="text" name='edu1' class='form-control' value='<?php echo (isset($education1)) ? "$education1" : ""?>'>
-       <input type="text" name='edu2' class='form-control' value='<?php echo (isset($education2)) ? "$education2" : ""?>'>
-       <input type="text" name='edu3' class='form-control' value='<?php echo (isset($education3)) ? "$education3" : ""?>'>
+        <label for="dob">Select DOB:</label> 
+       <input type="date" name='dob' class='form-control' value='<?php echo (isset($dateOfBirth)) ? "$dateOfBirth" : ""?>'>
     </div>
      
-    <div class="form-group">
-        <label for="gender">Select Country:</label> 
-      
-      <select name="country" id="" name='country'>
-      <?php
-      
-      $sql_country = "SELECT * FROM countries";
-$result_country = mysqli_query($conn, $sql_country);  
-    while($row = mysqli_fetch_assoc($result_country)) {
-       echo "<option value='".$row['num_code']."'>" .$row['en_short_name']."</option>";
 
-    }  
-      ?>
-      
-      </select>
-    </div>
      
      
  

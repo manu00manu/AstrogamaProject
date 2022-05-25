@@ -9,7 +9,7 @@ if($_REQUEST['action']==='sendReq'){
      $reqSendingFrom = $_SESSION['user_id'];
      $dateAdded_now = date('Y-m-d');
 
-     $sql = "INSERT INTO friend_requests (sendingfrom, sendingto, dateAdded) VALUES ('$reqSendingFrom', '$reqSendingTo', '$dateAdded_now')"; 
+     $sql = "INSERT INTO friend_request (sendingfrom, sendingto, dateAdded) VALUES ('$reqSendingFrom', '$reqSendingTo', '$dateAdded_now')"; 
 
      $sql_requestFrom_name = "SELECT name FROM register where id = '$reqSendingFrom'";
      $sql_requestTo_name = "SELECT name FROM register where id = '$reqSendingTo'";
