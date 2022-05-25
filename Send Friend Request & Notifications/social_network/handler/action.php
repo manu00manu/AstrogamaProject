@@ -6,10 +6,10 @@ session_start();
 
 if($_REQUEST['action']==='sendReq'){
      $reqSendingTo  = $_REQUEST['id'];
-     $reqSendingFrom = $_SESSION['member_id'];
+     $reqSendingFrom = $_SESSION['user_id'];
      $dateAdded_now = date('Y-m-d');
 
-     $sql = "INSERT INTO requests (sendingfrom, sendingto, dateAdded) VALUES ('$reqSendingFrom', '$reqSendingTo', '$dateAdded_now')"; 
+     $sql = "INSERT INTO friend_requests (sendingfrom, sendingto, dateAdded) VALUES ('$reqSendingFrom', '$reqSendingTo', '$dateAdded_now')"; 
 
      $sql_requestFrom_name = "SELECT name FROM register where id = '$reqSendingFrom'";
      $sql_requestTo_name = "SELECT name FROM register where id = '$reqSendingTo'";
@@ -21,7 +21,7 @@ if($_REQUEST['action']==='sendReq'){
      $row_name_TO = mysqli_fetch_assoc($result_TO);
 
         $message =  
-        $row_name_from['name'].' Sent You Request 
+        $row_name_from['username'].' Sent You Request 
         <button class="btn btn-primary" onclick="reqAction(1,'.$reqSendingFrom.')">Accept</button> 
         <button class="btn btn-success" onclick="reqAction(2,'.$reqSendingFrom.')">Reject</button>';
 
